@@ -1,0 +1,16 @@
+.react-bootstrap-table table {
+    table-layout: auto !important;
+}
+
+.titulo-coluna {
+    outline: none;
+    position: sticky;
+    top: 0;
+    border-top: none !important;
+    border-bottom: none !important;
+    background-color: white;
+}
+
+.table-responsive {
+    height: 400px;
+}
