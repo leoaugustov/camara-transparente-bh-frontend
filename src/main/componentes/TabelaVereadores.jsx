@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 
 import './TabelaVereadores.css'
+import fotoPadraoVereador from '../../imagens/vereador-foto-padrao.png'
 
 export default function TabelaVereadores() {
     const formatoMonetario = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'})
@@ -13,7 +14,10 @@ export default function TabelaVereadores() {
         formatter: (celula, linha) => {
             return (
                 <div  className="text-nowrap">
-                    <img src={ linha.linkFoto } alt="Foto do vereador" loading="lazy" width="40px" height="47px" className="mr-1 rounded"/>
+                    <picture>
+                        <source srcSet={ linha.linkFoto } loading="lazy" className="mr-1 rounded"/>
+                        <img src={ fotoPadraoVereador } alt="Foto do vereador" loading="lazy" width="40" height="47" className="mr-1 rounded"/>
+                    </picture>
                     <span>{ linha.nome }</span>
                 </div>
             )
@@ -66,6 +70,7 @@ export default function TabelaVereadores() {
         columns={ colunas } 
         bootstrap4 
         bordered={ false } 
+        noDataIndication={ () => "Nenhum vereador encontrado..." } 
         wrapperClasses="table-responsive" 
         classes="mb-0"/>
 }
