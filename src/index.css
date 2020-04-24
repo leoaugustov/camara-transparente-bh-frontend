@@ -11,10 +11,7 @@ body {
   background-color: #f7f9fc !important;
 }
 
-.texto-lg {
-  font-size: 1.5em;
-}
-
-.texto-md {
+.titulo-cartao {
   font-size: 1.2em;
+  font-weight: 700 !important;
 }

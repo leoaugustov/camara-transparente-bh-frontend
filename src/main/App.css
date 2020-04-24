@@ -1,8 +1,10 @@
 .barra-superior {
+    font-size: 1.5em;
     height: 50px;
     background-color: white;
 }
 
 .conteudo {
     margin-top: 70px;
+    margin-bottom: 40px;
 }
