@@ -14,10 +14,10 @@ export default function TabelaVereadores({ vereadores }) {
         text: 'Nome',
         formatter: (celula, linha) => {
             return (
-                <div  className="text-nowrap">
+                <div className="text-nowrap">
                     <picture>
-                        <source srcSet={ linha.linkFoto } loading="lazy" className="mr-1 rounded"/>
-                        <img src={ fotoPadraoVereador } alt="Foto do vereador" loading="lazy" width="40" height="47" className="mr-1 rounded"/>
+                        <source srcSet={ linha.foto }/>
+                        <img src={ fotoPadraoVereador } alt="Foto do vereador" width="40" height="47" className="mr-1 rounded"/>
                     </picture>
                     <span>{ linha.nome }</span>
                 </div>
@@ -53,7 +53,7 @@ export default function TabelaVereadores({ vereadores }) {
 
     colunas.forEach(coluna => {
         coluna.sort = true
-        coluna.headerClasses = 'titulo-coluna'
+        coluna.headerClasses = 'titulo-coluna text-nowrap'
         coluna.classes = 'align-middle'
     })
 

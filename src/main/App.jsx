@@ -12,7 +12,17 @@ export default function App() {
     useEffect(() => {
         fetch('http://localhost:8080/api/vereadores')
             .then(resposta => resposta.json())
-            .then(vereadores => setVereadores(vereadores))
+            .then(async vereadores => {
+                for(let vereador of vereadores) {
+                    const resposta = await fetch(`http://localhost:8080/api/vereadores/${vereador.id}/foto`)
+                    const dados = await resposta.json()
+
+                    vereador.foto = 'data:image/png;base64,' +dados.foto
+                }
+
+                return vereadores
+            })
+            .then(setVereadores)
     }, [])
 
     return (
@@ -21,7 +31,7 @@ export default function App() {
             <span className="font-weight-bold">câmara</span>
             <span className="font-weight-bold text-info">transparenteBH</span>
         </div>
-        <Container className="conteudo">
+        <Container fluid className="conteudo">
             <Row className="text-secondary">
                 <Col>Todas informações são referentes apenas ao último mandato.</Col>
             </Row>
