@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
 
 import './App.css'
@@ -37,6 +38,7 @@ export default function App() {
             <Row className="text-secondary">
                 <Col>Todas informações são referentes apenas ao último mandato.</Col>
             </Row>
+            <CusteioPorPartido/>
             <TabelaVereadores vereadores={ vereadores }/>
         </Container>
         </>  
