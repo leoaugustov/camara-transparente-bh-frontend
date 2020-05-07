@@ -24,18 +24,26 @@ export default function TabelaVereadores({ vereadores }) {
             )
         }
     }, {
-        dataField: 'frequencia',
+        dataField: 'estatisticasPresencas.frequencia',
         text: 'Frequência',
         formatter: (celula, linha, indiceLinha, extra) => extra.formato.format(celula),
         formatExtraData: {formato: formatoPorcentagem},
         align: 'center'
     }, {
-        dataField: 'quantidadeFaltas',
+        dataField: 'estatisticasPresencas.presencas',
+        text: 'Presenças',
+        align: 'center'
+    }, {
+        dataField: 'estatisticasPresencas.faltas',
         text: 'Faltas',
         align: 'center'
     }, {
-        dataField: 'quantidadeAusenciasJustificadas',
+        dataField: 'estatisticasPresencas.ausenciasJustificadas',
         text: 'Ausências Justificadas',
+        align: 'center'
+    }, {
+        dataField: 'estatisticasPresencas.licencasNaoRemuneradas',
+        text: 'Licenças não Remuneradas',
         align: 'center'
     }, {
         dataField: 'maiorCusteioMensal',
