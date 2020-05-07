@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Secao from './componentes/Secao'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
 
@@ -28,19 +29,23 @@ export default function App() {
     }, [])
 
     return (
-        <>
-        <div className="barra-superior fixed-top border-bottom shadow-sm d-flex justify-content-center align-items-center">
-            <span className="font-weight-bold">câmara</span>
-            <span className="font-weight-bold text-primary">transparente</span>
-            <img src={ icone } alt="Logo" width="50" height="49" className="ml-2"/>
-        </div>
-        <Container fluid className="conteudo">
-            <Row className="text-secondary">
-                <Col>Todas informações são referentes apenas ao último mandato.</Col>
-            </Row>
+    <>
+    <div className="barra-superior fixed-top border-bottom shadow-sm d-flex justify-content-center align-items-center">
+        <span className="font-weight-bold">câmara</span>
+        <span className="font-weight-bold text-primary">transparente</span>
+        <img src={ icone } alt="Logo" width="50" height="49" className="ml-2"/>
+    </div>
+    <Container fluid className="conteudo">
+        <Row className="text-secondary my-3">
+            <Col>Todas informações são referentes apenas ao último mandato.</Col>
+        </Row>
+        <Secao titulo="Custeio Parlamentar por Partido">
             <CusteioPorPartido/>
+        </Secao>
+        <Secao titulo="Vereadores">
             <TabelaVereadores vereadores={ vereadores }/>
-        </Container>
-        </>  
+        </Secao>    
+    </Container>
+    </>  
     );
 }

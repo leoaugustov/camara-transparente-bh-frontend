@@ -78,13 +78,12 @@ export default function CusteioPorPartido() {
     }
 
     return (
-        <Card className="shadow mb-3">
-            <Card.Header className="titulo-cartao">Custeio Parlamentar por Partido</Card.Header>
-            <Card.Body>
-                <div style={ { height: '350px' } }>
-                    <canvas ref={ canvasGrafico }></canvas>
-                </div> 
-            </Card.Body>
-        </Card>
+    <Card className="shadow mb-3">
+        <Card.Body>
+            <div style={ { height: '350px' } }>
+                <canvas ref={ canvasGrafico }></canvas>
+            </div> 
+        </Card.Body>
+    </Card>
     )
 }

@@ -58,19 +58,18 @@ export default function TabelaVereadores({ vereadores }) {
     })
 
     return (
-        <Card className="shadow mb-3">
-            <Card.Header className="titulo-cartao">Vereadores</Card.Header>
-            <Card.Body className="p-0">
-                <BootstrapTable 
-                    keyField="id" 
-                    data={ vereadores } 
-                    columns={ colunas } 
-                    bootstrap4 
-                    bordered={ false } 
-                    noDataIndication={ () => "Nenhum vereador encontrado..." } 
-                    wrapperClasses="table-responsive" 
-                    classes="mb-0"/>
-            </Card.Body>
-        </Card>
-    )    
+    <Card className="shadow mb-3">
+        <Card.Body className="p-0 py-2">
+            <BootstrapTable 
+                keyField="id" 
+                data={ vereadores } 
+                columns={ colunas } 
+                bootstrap4 
+                bordered={ false } 
+                noDataIndication={ () => "Nenhum vereador encontrado..." } 
+                wrapperClasses="table-responsive" 
+                classes="mb-0"/>
+        </Card.Body>
+    </Card>
+    )
 }
