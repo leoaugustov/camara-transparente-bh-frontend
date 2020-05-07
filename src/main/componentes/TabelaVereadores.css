@@ -3,6 +3,7 @@
 }
 
 .titulo-coluna {
+    font-size: 0.9em;
     outline: none;
     position: sticky;
     top: 0;
