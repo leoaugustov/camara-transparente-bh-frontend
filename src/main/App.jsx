@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Secao from './componentes/Secao'
+import Sinteses from './componentes/Sinteses'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
 
@@ -39,6 +40,7 @@ export default function App() {
         <Row className="text-secondary my-3">
             <Col>Todas informações são referentes apenas ao último mandato.</Col>
         </Row>
+        <Sinteses vereadores={ vereadores }/>
         <Secao titulo="Custeio Parlamentar por Partido">
             <CusteioPorPartido/>
         </Secao>
