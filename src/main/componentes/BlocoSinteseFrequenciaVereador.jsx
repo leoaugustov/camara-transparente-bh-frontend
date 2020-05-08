@@ -28,7 +28,7 @@ export default function BlocoSinteseFrequenciaVereador({ vereador }) {
             </Row>
             <Row className="align-items-center">
                 <Col xs="auto" className="pr-0">
-                    <img src = { vereador.foto } alt="Foto do vereador" width="50" height="59" className="rounded p-0"/>
+                    <img src = { vereador.linkFoto } alt="Foto do vereador" width="50" height="59" className="rounded p-0"/>
                 </Col>
                 <Col className="pl-2 pr-0 text-truncate">
                     <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>

@@ -25,16 +25,6 @@ export default function App() {
     useEffect(() => {
         fetch('http://localhost:8080/api/vereadores')
             .then(resposta => resposta.json())
-            .then(async vereadores => {
-                for(let vereador of vereadores) {
-                    const resposta = await fetch(`http://localhost:8080/api/vereadores/${vereador.id}/foto`)
-                    const dados = await resposta.json()
-
-                    vereador.foto = 'data:image/png;base64,' +dados.foto
-                }
-
-                return vereadores
-            })
             .then(setVereadores)
 
         fetch('http://localhost:8080/api/status-scrap')

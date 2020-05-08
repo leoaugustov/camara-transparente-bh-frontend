@@ -16,7 +16,7 @@ export default function TabelaVereadores({ vereadores }) {
             return (
                 <div className="text-nowrap">
                     <picture>
-                        <source srcSet={ linha.foto }/>
+                        <source srcSet={ linha.linkFoto }/>
                         <img src={ fotoPadraoVereador } alt="Foto do vereador" width="40" height="47" className="mr-1 rounded"/>
                     </picture>
                     <span>{ linha.nome }</span>
