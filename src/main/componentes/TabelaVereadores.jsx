@@ -1,6 +1,6 @@
 import React from 'react'
-import BootstrapTable from 'react-bootstrap-table-next'
 import Card from 'react-bootstrap/Card'
+import Tabela from './Tabela'
 
 import './TabelaVereadores.css'
 import fotoPadraoVereador from '../../imagens/vereador-foto-padrao.png'
@@ -22,61 +22,60 @@ export default function TabelaVereadores({ vereadores }) {
                     <span>{ linha.nome }</span>
                 </div>
             )
-        }
+        },
+        sort: true
     }, {
         dataField: 'estatisticasPresencas.frequencia',
         text: 'Frequência',
         formatter: (celula, linha, indiceLinha, extra) => extra.formato.format(celula),
         formatExtraData: {formato: formatoPorcentagem},
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'estatisticasPresencas.presencas',
         text: 'Presenças',
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'estatisticasPresencas.faltas',
         text: 'Faltas',
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'estatisticasPresencas.ausenciasJustificadas',
         text: 'Ausências Justificadas',
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'estatisticasPresencas.licencasNaoRemuneradas',
         text: 'Licenças não Remuneradas',
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'maiorCusteioMensal',
         text: 'Maior Custeio Mensal',
         formatter: (celula, linha, indiceLinha, extra) => extra.formato.format(celula),
         formatExtraData: {formato: formatoMonetario},
-        align: 'center'
+        align: 'center',
+        sort: true
     }, {
         dataField: 'custeioTotal',
         text: 'Custeio Total',
         formatter: (celula, linha, indiceLinha, extra) => extra.formato.format(celula),
         formatExtraData: {formato: formatoMonetario},
-        align: 'center'
+        align: 'center',
+        sort: true
     }]
-
-    colunas.forEach(coluna => {
-        coluna.sort = true
-        coluna.headerClasses = 'titulo-coluna text-nowrap'
-        coluna.classes = 'align-middle'
-    })
 
     return (
     <Card className="shadow mb-3">
         <Card.Body className="p-0 py-2">
-            <BootstrapTable 
-                keyField="id" 
-                data={ vereadores } 
-                columns={ colunas } 
-                bootstrap4 
-                bordered={ false } 
-                noDataIndication={ () => "Nenhum vereador encontrado..." } 
-                wrapperClasses="table-responsive" 
-                classes="mb-0"/>
+            <Tabela 
+                colunaChave="id" 
+                colunas={ colunas } 
+                dados={ vereadores } 
+                mensagemColecaoVazia="Nenhum vereador encontrado..." 
+                classesCssElementoWrapper="altura-tabela-vereadores"/>
         </Card.Body>
     </Card>
     )
