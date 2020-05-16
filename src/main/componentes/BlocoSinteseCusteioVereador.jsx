@@ -16,7 +16,7 @@ export default function BlocoSinteseCusteioVereador({ vereador }) {
                     <span className="custeio text-primary">
                         { formatoMonetario.format(vereador.custeioTotal) }
                     </span>
-                    <div className="texto-informativo text-muted">
+                    <div className="text-muted">
                         Maior em único mês: { formatoMonetario.format(vereador.maiorCusteioMensal) }
                     </div>
                 </Col>
@@ -27,6 +27,9 @@ export default function BlocoSinteseCusteioVereador({ vereador }) {
                 </Col>
                 <Col className="pl-2 pr-0 text-truncate">
                     <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
+                    <div className="text-muted">
+                        { vereador.estatisticasPresencas.quantidadeExercicios } meses em exercício da função
+                    </div>
                 </Col>
             </Row>
         </Card.Body>

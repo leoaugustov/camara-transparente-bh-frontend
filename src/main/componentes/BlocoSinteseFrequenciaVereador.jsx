@@ -17,7 +17,7 @@ export default function BlocoSinteseFrequenciaVereador({ vereador }) {
                         { formatoPorcentagem.format(vereador.estatisticasPresencas.frequencia) }
                     </span>
                 </Col>
-                <Col xs="auto" className="texto-informativo text-muted">
+                <Col xs="auto" className="text-muted">
                     <div>
                         Presenças: { vereador.estatisticasPresencas.presencas }
                     </div>
@@ -32,6 +32,9 @@ export default function BlocoSinteseFrequenciaVereador({ vereador }) {
                 </Col>
                 <Col className="pl-2 pr-0 text-truncate">
                     <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
+                    <div className="text-muted">
+                        { vereador.estatisticasPresencas.quantidadeExercicios } meses em exercício da função
+                    </div>
                 </Col>
             </Row>
         </Card.Body>
