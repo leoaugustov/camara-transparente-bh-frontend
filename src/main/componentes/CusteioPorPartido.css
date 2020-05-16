@@ -1,0 +1,9 @@
+.altura-tabela-partidos {
+    height: 300px;
+}
+
+.bloco-cor-legenda {
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+}
