@@ -2,12 +2,11 @@ import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import { formatoMonetario } from '../formatos'
 
 import './BlocoSinteseCusteioVereador.css'
 
 export default function BlocoSinteseCusteioVereador({ vereador }) {
-    const formatoMonetario = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'})
-
     return (
         <Card className="shadow mb-3">
         <Card.Body className="pt-2 pb-3">

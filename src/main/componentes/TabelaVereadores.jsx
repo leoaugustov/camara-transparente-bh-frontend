@@ -1,14 +1,12 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Tabela from './Tabela'
+import { formatoMonetario, formatoPorcentagem } from '../formatos'
 
 import './TabelaVereadores.css'
 import fotoPadraoVereador from '../../imagens/vereador-foto-padrao.png'
 
 export default function TabelaVereadores({ vereadores }) {
-    const formatoMonetario = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'})
-    const formatoPorcentagem = new Intl.NumberFormat('pt-BR', {style: 'percent', maximumFractionDigits: 2})
-
     const colunas = [{
         dataField: 'nome',
         text: 'Nome',

@@ -6,19 +6,12 @@ import Secao from './componentes/Secao'
 import Sinteses from './componentes/Sinteses'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
+import { formatoData } from './formatos'
 
 import './App.css'
 import icone from '../imagens/icone.png'
 
 export default function App() {
-    const formatoData = new Intl.DateTimeFormat('pt-BR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    })
-
     const [vereadores, setVereadores] = useState([])
     const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState([])
 

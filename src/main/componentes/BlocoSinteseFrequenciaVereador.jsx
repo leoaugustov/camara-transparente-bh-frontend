@@ -2,12 +2,11 @@ import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import { formatoPorcentagem } from '../formatos'
 
 import './BlocoSinteseFrequenciaVereador.css'
 
 export default function BlocoSinteseFrequenciaVereador({ vereador }) {
-    const formatoPorcentagem = new Intl.NumberFormat('pt-BR', {style: 'percent', maximumFractionDigits: 2})
-    
     return (
     <Card className="shadow mb-3">
         <Card.Body className="pt-2 pb-3">

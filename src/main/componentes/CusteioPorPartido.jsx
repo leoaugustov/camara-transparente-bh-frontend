@@ -4,11 +4,11 @@ import Tabela from './Tabela'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { formatoMonetario } from '../formatos'
 
 import './CusteioPorPartido.css'
 
 export default function CusteioPorPartido() {
-    const [formatoMonetario] = useState(new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}))
     const canvasGrafico = useRef()
     const [, setGrafico] = useState([])
     const [partidos, setPartidos] = useState([])
@@ -66,7 +66,7 @@ export default function CusteioPorPartido() {
                 return dados
             })
             .then(setPartidos)
-    }, [formatoMonetario])
+    }, [])
 
     function ordenarCusteioDesc(dados) {
         return dados.sort((a, b) => b.custeio - a.custeio)
