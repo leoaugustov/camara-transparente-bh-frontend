@@ -4,6 +4,7 @@ import Tabela from './Tabela'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import buscarDados from '../buscaDados'
 import { formatoMonetario } from '../formatos'
 
 import './CusteioPorPartido.css'
@@ -51,8 +52,7 @@ export default function CusteioPorPartido() {
             }
         }
 
-        fetch('http://localhost:8080/api/custeio-parlamentar/por-partido')
-            .then(resposta => resposta.json())
+        buscarDados('/custeio-parlamentar/por-partido')
             .then(dados => dados.filter(dado => dado.custeio > 0))
             .then(ordenarCusteioDesc)
             .then(adicionarCores)

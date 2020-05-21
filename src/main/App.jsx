@@ -6,6 +6,7 @@ import Secao from './componentes/Secao'
 import Sinteses from './componentes/Sinteses'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
+import buscarDados from './buscaDados'
 import { formatoData } from './formatos'
 
 import './App.css'
@@ -16,15 +17,11 @@ export default function App() {
     const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/vereadores')
-            .then(resposta => resposta.json())
-            .then(setVereadores)
+        buscarDados('/vereadores').then(setVereadores)
 
-        fetch('http://localhost:8080/api/status-scrap')
-            .then(resposta => resposta.json())
-            .then(status => {
-                setDataUltimaAtualizacao(new Date(status.dataUltimaAtualizacao))
-            })
+        buscarDados('/status-scrap').then(status => {
+            setDataUltimaAtualizacao(new Date(status.dataUltimaAtualizacao))
+        })
     }, [])
 
     return (
