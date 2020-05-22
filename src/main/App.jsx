@@ -6,6 +6,8 @@ import Secao from './componentes/Secao'
 import Sinteses from './componentes/Sinteses'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import buscarDados from './buscaDados'
 import { formatoData } from './formatos'
 
@@ -34,7 +36,16 @@ export default function App() {
     <Container fluid className="conteudo">
         <Row className="text-secondary my-3">
             <Col xs={12} lg={8}>Todas informações são referentes apenas ao último mandato 😉.</Col>
-            <Col xs={12} lg={4}>☑️ Atualizado em { formatoData.format(dataUltimaAtualizacao) }</Col>
+            <Col xs={12} lg={4}>
+                <FontAwesomeIcon icon={ faCheckCircle } className="text-success"/> Atualizado em { formatoData.format(dataUltimaAtualizacao) }
+            </Col>
+        </Row>
+        <Row className="text-secondary my-3">
+            <Col>
+            <FontAwesomeIcon icon={ faInfoCircle } className="text-primary"/> Segundo o site da Câmara Municipal de Belo Horizonte, 
+            Custeio ou Custeio Parlamentar são os gastos com escritório, informática, serviços gráficos, divulgação da atividade 
+            parlamentar, carimbos e material de copa.
+            </Col>
         </Row>
         <Sinteses vereadores={ vereadores }/>
         <Secao titulo="Custeio Parlamentar por Partido">
