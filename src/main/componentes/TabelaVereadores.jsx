@@ -4,7 +4,7 @@ import Tabela from './Tabela'
 import { formatoMonetario, formatoPorcentagem } from '../formatos'
 
 import './TabelaVereadores.css'
-import fotoPadraoVereador from '../../imagens/vereador-foto-padrao.png'
+import fotoPadraoVereador from '../../assets/vereador-foto-padrao.png'
 
 export default function TabelaVereadores({ vereadores }) {
     const colunas = [{

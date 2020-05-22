@@ -10,7 +10,7 @@ import buscarDados from './buscaDados'
 import { formatoData } from './formatos'
 
 import './App.css'
-import icone from '../imagens/icone.png'
+import icone from '../assets/icone-principal.png'
 
 export default function App() {
     const [vereadores, setVereadores] = useState([])
