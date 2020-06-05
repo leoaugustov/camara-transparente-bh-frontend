@@ -24,11 +24,12 @@ export default function BlocoSinteseCusteioVereador({ vereador }) {
                 <Col xs="auto" className="pr-0">
                     <img src = { vereador.linkFoto } alt="Foto do vereador" width="50" height="59" className="rounded p-0"/>
                 </Col>
-                <Col className="pl-2 pr-0 text-truncate">
+                <Col className="pl-2 text-truncate">
                     <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
-                    <div className="text-muted">
+                    <br></br>
+                    <span className="text-muted">
                         { vereador.estatisticasPresencas.quantidadeExercicios } meses em exercício da função
-                    </div>
+                    </span>
                 </Col>
             </Row>
         </Card.Body>
