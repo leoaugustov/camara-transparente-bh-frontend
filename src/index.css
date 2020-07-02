@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'Circular-Std';
-  src: url('./fontes/CircularStd.ttf');
+  font-family: 'Roboto-Medium';
+  src: url('./fontes/Roboto-Medium.ttf');
 }
 
 * {
-  font-family: 'Circular-Std', sans-serif;
+  font-family: 'Roboto-Medium', sans-serif;
 }
 
 body {
