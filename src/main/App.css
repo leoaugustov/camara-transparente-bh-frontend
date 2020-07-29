@@ -8,3 +8,11 @@
     margin-top: 70px;
     margin-bottom: 40px;
 }
+
+.autoria {
+    font-size: smaller;
+}
+
+.link-autor:hover {
+    text-decoration: none;
+}

@@ -7,7 +7,8 @@ import Sinteses from './componentes/Sinteses'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfoCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons/'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/'
 import buscarDados from './buscaDados'
 import { formatoData } from './formatos'
 
@@ -53,7 +54,15 @@ export default function App() {
         </Secao>
         <Secao titulo="Vereadores">
             <TabelaVereadores vereadores={ vereadores }/>
-        </Secao>    
+        </Secao>
+        <Row className="autoria text-secondary mt-5">
+            <Col className="d-flex justify-content-center align-items-center">
+            Criado e mantido por 
+            <a href="https://github.com/leoaugustov/" rel="author noopener noreferrer" target="_blank" className="link-autor ml-1">
+                leoaugustov <FontAwesomeIcon icon={ faGithub } />
+            </a>
+            </Col>
+        </Row>   
     </Container>
     </>  
     );
