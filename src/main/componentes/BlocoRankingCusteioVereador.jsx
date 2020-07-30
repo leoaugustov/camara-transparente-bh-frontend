@@ -2,26 +2,21 @@ import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import { formatoPorcentagem } from '../formatos'
+import { formatoMonetario } from '../formatos'
 
-import './BlocoSinteseFrequenciaVereador.css'
+import './BlocoRankingCusteioVereador.css'
 
-export default function BlocoSinteseFrequenciaVereador({ vereador }) {
+export default function BlocoRankingCusteioVereador({ vereador }) {
     return (
-    <Card className="shadow mb-3">
+        <Card className="shadow mb-3">
         <Card.Body className="pt-2 pb-3">
         <Row className="align-items-center justify-content-between">
                 <Col xs="auto">
-                    <span className="frequencia text-primary">
-                        { formatoPorcentagem.format(vereador.estatisticasPresencas.frequencia) }
+                    <span className="custeio text-primary">
+                        { formatoMonetario.format(vereador.custeioTotal) }
                     </span>
-                </Col>
-                <Col xs="auto" className="text-muted">
-                    <div>
-                        Presenças: { vereador.estatisticasPresencas.presencas }
-                    </div>
-                    <div>
-                        Ausências: { vereador.estatisticasPresencas.totalAusencias }
+                    <div className="text-muted">
+                        Maior em único mês: { formatoMonetario.format(vereador.maiorCusteioMensal) }
                     </div>
                 </Col>
             </Row>
@@ -40,4 +35,4 @@ export default function BlocoSinteseFrequenciaVereador({ vereador }) {
         </Card.Body>
     </Card>
     )
-}
+}    

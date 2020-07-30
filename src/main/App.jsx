@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Secao from './componentes/Secao'
-import Sinteses from './componentes/Sinteses'
+import TodosRankings from './componentes/TodosRankings'
 import CusteioPorPartido from './componentes/CusteioPorPartido'
 import TabelaVereadores from './componentes/TabelaVereadores'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -48,7 +48,7 @@ export default function App() {
             parlamentar, carimbos e material de copa.
             </Col>
         </Row>
-        <Sinteses vereadores={ vereadores }/>
+        <TodosRankings  vereadores={ vereadores }/>
         <Secao titulo="Custeio Parlamentar por Partido">
             <CusteioPorPartido/>
         </Secao>
