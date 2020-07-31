@@ -1,4 +1,16 @@
 .titulo-secao {
+    position: relative;
+    margin-left: 15px;
     font-size: 1.3em !important;
     font-weight: 700 !important;
 }
+
+.titulo-secao::before {
+    content: '';
+    position: absolute;
+    background-color: #007BFF;
+    width: 8px;
+    height: 90%;
+    border-radius: 4px;
+    left: -15px;
+}    
