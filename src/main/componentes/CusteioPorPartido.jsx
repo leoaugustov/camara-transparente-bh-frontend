@@ -4,12 +4,14 @@ import Tabela from './Tabela'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import AnimacaoCarregamento from './AnimacaoCarregamento'
 import buscarDados from '../buscaDados'
 import { formatoMonetario } from '../formatos'
 
 import './CusteioPorPartido.css'
 
 export default function CusteioPorPartido() {
+    const [carregando, setCarregando] = useState([true])
     const canvasGrafico = useRef()
     const [, setGrafico] = useState([])
     const [partidos, setPartidos] = useState([])
@@ -56,6 +58,10 @@ export default function CusteioPorPartido() {
             .then(dados => dados.filter(dado => dado.custeio > 0))
             .then(ordenarCusteioDesc)
             .then(adicionarCores)
+            .then(dados => {
+                setCarregando(false)
+                return dados
+            })    
             .then(dados => {
                 setGrafico(new Chart(canvasGrafico.current, {
                     type: 'doughnut',
@@ -114,7 +120,10 @@ export default function CusteioPorPartido() {
     return (
     <Card className="shadow mb-3">
         <Card.Body>
-            <Row>
+            <Row className={ carregando ? "justify-content-center" : "" }>
+            { carregando 
+                ? <AnimacaoCarregamento/>
+                : <>
                 <Col xs={12} lg={6} className="mb-3 mb-lg-0">
                     <div style={ { height: '300px' } }>
                         <canvas ref={ canvasGrafico }></canvas>
@@ -128,6 +137,8 @@ export default function CusteioPorPartido() {
                         mensagemColecaoVazia="Nenhum partido encontrado..." 
                         classesCssElementoWrapper="altura-tabela-partidos"/>
                 </Col>
+                </>
+            }
             </Row>
         </Card.Body>
     </Card>

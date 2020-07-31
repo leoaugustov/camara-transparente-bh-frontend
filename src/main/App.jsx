@@ -16,16 +16,32 @@ import './App.css'
 import icone from '../assets/icone-principal.png'
 
 export default function App() {
+    const [carregando, setCarregando] = useState([true])
     const [vereadores, setVereadores] = useState([])
     const [dataUltimaAtualizacao, setDataUltimaAtualizacao] = useState([])
 
     useEffect(() => {
-        buscarDados('/vereadores').then(setVereadores)
-
-        buscarDados('/status-scrap').then(status => {
-            setDataUltimaAtualizacao(new Date(status.dataUltimaAtualizacao))
-        })
+        buscarDados('/status-scrap')
+            .then(status => {
+                setDataUltimaAtualizacao(new Date(status.dataUltimaAtualizacao))
+            })
+            .then(_ => buscarDados('/vereadores'))
+            .then(setVereadores)
+            .then(_ => setCarregando(false))
     }, [])
+
+    function criarMensagemAtualizacaoDados() {
+        if(carregando) {
+            return null
+        }
+
+        return (
+        <>
+        <FontAwesomeIcon icon={ faCheckCircle } className="text-success"/> 
+        Atualizado em { formatoData.format(dataUltimaAtualizacao) }
+        </>
+        )
+    }
 
     return (
     <>
@@ -38,7 +54,7 @@ export default function App() {
         <Row className="text-secondary my-3">
             <Col xs={12} lg={8}>Todas informações são referentes apenas ao último mandato 😉.</Col>
             <Col xs={12} lg={4}>
-                <FontAwesomeIcon icon={ faCheckCircle } className="text-success"/> Atualizado em { formatoData.format(dataUltimaAtualizacao) }
+                { criarMensagemAtualizacaoDados() }
             </Col>
         </Row>
         <Row className="text-secondary my-3">
@@ -48,12 +64,12 @@ export default function App() {
             parlamentar, carimbos e material de copa.
             </Col>
         </Row>
-        <TodosRankings  vereadores={ vereadores }/>
+        <TodosRankings  { ...{ vereadores, carregando } }/>
         <Secao titulo="Custeio Parlamentar por Partido">
             <CusteioPorPartido/>
         </Secao>
         <Secao titulo="Vereadores">
-            <TabelaVereadores vereadores={ vereadores }/>
+            <TabelaVereadores { ...{ vereadores, carregando } }/>
         </Secao>
         <Row className="autoria text-secondary mt-5">
             <Col className="d-flex justify-content-center align-items-center">
