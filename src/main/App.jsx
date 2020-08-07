@@ -37,8 +37,7 @@ export default function App() {
 
         return (
         <>
-        <FontAwesomeIcon icon={ faCheckCircle } className="text-success"/> 
-        Atualizado em { formatoData.format(dataUltimaAtualizacao) }
+        <FontAwesomeIcon icon={ faCheckCircle } className="text-success"/> Atualizado em { formatoData.format(dataUltimaAtualizacao) }
         </>
         )
     }
@@ -52,14 +51,20 @@ export default function App() {
     </div>
     <Container fluid className="conteudo">
         <Row className="text-secondary my-3">
-            <Col xs={12} lg={8}>Todas informações são referentes apenas ao último mandato 😉.</Col>
-            <Col xs={12} lg={4}>
+            <Col xs={12}>Os dados trabalhados são os de Presença Mensal Consolidada e Custeio Parlamentar, 
+                ambos disponibilizados na seção Transparência do 
+                <a href="https://cmbh.mg.gov.br/" rel="noopener noreferrer" target="_blank" className="link ml-1">
+                portal da Câmara Municipal de Belo Horizonte.
+                </a>
+            </Col>
+            <Col xs={12}>Todas informações são referentes apenas ao último mandato 😉.</Col>
+            <Col xs={12}>
                 { criarMensagemAtualizacaoDados() }
             </Col>
         </Row>
         <Row className="text-secondary my-3">
             <Col>
-            <FontAwesomeIcon icon={ faInfoCircle } className="text-primary"/> Segundo o site da Câmara Municipal de Belo Horizonte, 
+            <FontAwesomeIcon icon={ faInfoCircle } className="text-primary"/> Segundo o portal da CMBH, 
             Custeio ou Custeio Parlamentar são os gastos com escritório, informática, serviços gráficos, divulgação da atividade 
             parlamentar, carimbos e material de copa.
             </Col>
@@ -74,7 +79,7 @@ export default function App() {
         <Row className="autoria text-secondary mt-5">
             <Col className="d-flex justify-content-center align-items-center">
             Criado e mantido por 
-            <a href="https://github.com/leoaugustov/" rel="author noopener noreferrer" target="_blank" className="link-autor ml-1">
+            <a href="https://github.com/leoaugustov/" rel="author noopener noreferrer" target="_blank" className="link ml-1">
                 leoaugustov <FontAwesomeIcon icon={ faGithub } />
             </a>
             </Col>
