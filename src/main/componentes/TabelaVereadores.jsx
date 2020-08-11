@@ -34,22 +34,8 @@ export default function TabelaVereadores({ vereadores, carregando }) {
         text: 'Presenças',
         sort: true
     }, {
-        dataField: 'estatisticasPresencas.faltas',
-        text: 'Faltas',
-        sort: true
-    }, {
-        dataField: 'estatisticasPresencas.ausenciasJustificadas',
-        text: 'Ausências Justificadas',
-        sort: true
-    }, {
-        dataField: 'estatisticasPresencas.licencasNaoRemuneradas',
-        text: 'Licenças não Remuneradas',
-        sort: true
-    }, {
-        dataField: 'maiorCusteioMensal',
-        text: 'Maior Custeio Mensal',
-        formatter: (celula, linha, indiceLinha, extra) => extra.formato.format(celula),
-        formatExtraData: {formato: formatoMonetario},
+        dataField: 'estatisticasPresencas.totalAusencias',
+        text: 'Total de Ausências',
         sort: true
     }, {
         dataField: 'custeioTotal',

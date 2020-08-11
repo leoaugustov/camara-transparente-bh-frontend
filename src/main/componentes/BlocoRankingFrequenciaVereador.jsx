@@ -37,7 +37,7 @@ export default function BlocoRankingFrequenciaVereador({ vereador, carregando })
                         <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
                         <br></br>
                         <span className="text-muted">
-                            { vereador.estatisticasPresencas.quantidadeExercicios } meses em exercício da função
+                            { vereador.estatisticasPresencas.quantidadeExercicios } meses exercendo a função
                         </span>
                     </Col>
                 </Row>
