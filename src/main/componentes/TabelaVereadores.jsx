@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import Card from 'react-bootstrap/Card'
 import AnimacaoCarregamento from './AnimacaoCarregamento'
 import Tabela from './Tabela'
@@ -14,11 +15,18 @@ export default function TabelaVereadores({ vereadores, carregando }) {
         formatter: (celula, linha) => {
             return (
                 <div className="text-nowrap">
-                    <picture>
-                        <source srcSet={ linha.linkFoto }/>
-                        <img src={ fotoPadraoVereador } alt="Foto do vereador" width="40" height="47" className="mr-1 rounded"/>
-                    </picture>
-                    <span>{ linha.nome }</span>
+                    <Link to={ 
+                        {
+                            pathname: `/perfil-vereador/${linha.id}`, 
+                            state: linha
+                        } 
+                    } className="link">
+                        <picture>
+                            <source srcSet={ linha.linkFoto }/>
+                            <img src={ fotoPadraoVereador } alt="Foto do vereador" width="40" height="47" className="mr-1 rounded"/>
+                        </picture>
+                        <span>{ linha.nome }</span>
+                    </Link>
                 </div>
             )
         },
