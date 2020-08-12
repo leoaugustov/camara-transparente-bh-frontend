@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import Card from 'react-bootstrap/Card'
+import FotoVereador from './FotoVereador'
 import AnimacaoCarregamento from './AnimacaoCarregamento'
 import Tabela from './Tabela'
 import { formatoMonetario, formatoPorcentagem } from '../formatos'
 
 import './TabelaVereadores.css'
-import fotoPadraoVereador from '../../assets/vereador-foto-padrao.png'
 
 export default function TabelaVereadores({ vereadores, carregando }) {
     const colunas = [{
@@ -21,11 +21,8 @@ export default function TabelaVereadores({ vereadores, carregando }) {
                             state: linha
                         } 
                     } className="link">
-                        <picture>
-                            <source srcSet={ linha.linkFoto }/>
-                            <img src={ fotoPadraoVereador } alt="Foto do vereador" width="40" height="47" className="mr-1 rounded"/>
-                        </picture>
-                        <span>{ linha.nome }</span>
+                        <FotoVereador linkFoto={ linha.linkFoto } proporcao="0.339"/>
+                        <span className="ml-1">{ linha.nome }</span>
                     </Link>
                 </div>
             )

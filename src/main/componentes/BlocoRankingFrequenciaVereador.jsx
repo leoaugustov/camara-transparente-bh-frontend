@@ -2,6 +2,7 @@ import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import FotoVereador from './FotoVereador'
 import AnimacaoCarregamento from './AnimacaoCarregamento'
 import { formatoPorcentagem } from '../formatos'
 
@@ -31,7 +32,7 @@ export default function BlocoRankingFrequenciaVereador({ vereador, carregando })
                 </Row>
                 <Row className="align-items-center">
                     <Col xs="auto" className="pr-0">
-                        <img src = { vereador.linkFoto } alt="Foto do vereador" width="50" height="59" className="rounded p-0"/>
+                        <FotoVereador linkFoto={ vereador.linkFoto } proporcao="0.424"/>
                     </Col>
                     <Col className="pl-2 text-truncate">
                         <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
