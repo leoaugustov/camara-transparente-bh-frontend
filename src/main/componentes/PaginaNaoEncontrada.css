@@ -1,0 +1,10 @@
+.PaginaNaoEncontrada-titulo {
+    font-weight: bold;
+    font-size: 9em;
+    text-shadow: 9px 9px rgba(224,224,224,1);
+}
+
+.PaginaNaoEncontrada-subtitulo {
+    text-align: center;
+    font-size: 1.5em;
+}
