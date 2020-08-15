@@ -6,12 +6,12 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/'
 
 export default () => {
     return (
-    <Row className="autoria text-secondary mt-5">
+    <Row className="text-secondary mt-5" style={ { fontSize: 'smaller' } }>
         <Col className="d-flex justify-content-center align-items-center">
-        Criado e mantido por 
-        <a href="https://github.com/leoaugustov/" rel="author noopener noreferrer" target="_blank" className="link ml-1">
-            leoaugustov <FontAwesomeIcon icon={ faGithub } />
-        </a>
+            Criado e mantido por 
+            <a href="https://github.com/leoaugustov/" rel="author noopener noreferrer" target="_blank" className="link ml-1">
+                leoaugustov <FontAwesomeIcon icon={ faGithub } />
+            </a>
         </Col>
     </Row>
     )

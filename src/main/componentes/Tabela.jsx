@@ -6,7 +6,7 @@ import './Tabela.css'
 export default function Tabela({ colunaChave, colunas, dados, mensagemColecaoVazia, classesCssElementoWrapper }) {
     function colunasComAtributosPadrao() {
         return colunas.map(coluna => {
-            return { ...coluna, headerClasses: 'titulo-coluna text-nowrap', classes: 'align-middle' }
+            return { ...coluna, headerClasses: 'Tabela-titulo-coluna text-nowrap', classes: 'align-middle' }
         })
     }
     

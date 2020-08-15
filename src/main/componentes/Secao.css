@@ -1,11 +1,11 @@
-.titulo-secao {
+.Secao-titulo-secao {
     position: relative;
     margin-left: 15px;
     font-size: 1.3em !important;
     font-weight: 700 !important;
 }
 
-.titulo-secao::before {
+.Secao-titulo-secao::before {
     content: '';
     position: absolute;
     background-color: #007BFF;

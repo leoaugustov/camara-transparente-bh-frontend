@@ -17,7 +17,7 @@ export default function BlocoRankingCusteioVereador({ vereador, carregando }) {
                 : <>
                 <Row className="align-items-center justify-content-between">
                     <Col xs="auto">
-                        <span className="custeio text-primary">
+                        <span className="BlocoRankingCusteioVereador-custeio text-primary">
                             { formatoMonetario.format(vereador.custeioTotal) }
                         </span>
                         <div className="text-muted">
@@ -30,7 +30,7 @@ export default function BlocoRankingCusteioVereador({ vereador, carregando }) {
                         <FotoVereador linkFoto={ vereador.linkFoto } proporcao="0.424"/>
                     </Col>
                     <Col className="pl-2 text-truncate">
-                        <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
+                        <span className="BlocoRankingCusteioVereador-nome-vereador font-weight-bold">{ vereador.nome }</span>
                         <br></br>
                         <span className="text-muted">
                             { vereador.estatisticasPresencas.quantidadeExercicios } meses exercendo a função

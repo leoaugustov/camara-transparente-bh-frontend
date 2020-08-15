@@ -10,8 +10,8 @@ import './App.css'
 export default () => {
     return (
     <Router>
-        <Container fluid className="conteudo">
-            <div className="barra-superior fixed-top border-bottom shadow-sm d-flex justify-content-center align-items-center">
+        <Container fluid className="App-conteudo">
+            <div className="App-barra-superior fixed-top border-bottom shadow-sm d-flex justify-content-center align-items-center">
                 <span className="font-weight-bold">câmara</span>
                 <span className="font-weight-bold text-primary">transparente</span>
                 <img src={ icone } alt="Logo" width="50" height="49" className="ml-2"/>

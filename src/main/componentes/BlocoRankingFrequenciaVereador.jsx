@@ -17,7 +17,7 @@ export default function BlocoRankingFrequenciaVereador({ vereador, carregando })
                 : <>
                 <Row className="align-items-center justify-content-between">
                     <Col xs="auto">
-                        <span className="frequencia text-primary">
+                        <span className="BlocoRankingFrequenciaVereador-frequencia text-primary">
                             { formatoPorcentagem.format(vereador.estatisticasPresencas.frequencia) }
                         </span>
                     </Col>
@@ -35,7 +35,7 @@ export default function BlocoRankingFrequenciaVereador({ vereador, carregando })
                         <FotoVereador linkFoto={ vereador.linkFoto } proporcao="0.424"/>
                     </Col>
                     <Col className="pl-2 text-truncate">
-                        <span className="nome-vereador font-weight-bold">{ vereador.nome }</span>
+                        <span className="BlocoRankingFrequenciaVereador-nome-vereador font-weight-bold">{ vereador.nome }</span>
                         <br></br>
                         <span className="text-muted">
                             { vereador.estatisticasPresencas.quantidadeExercicios } meses exercendo a função

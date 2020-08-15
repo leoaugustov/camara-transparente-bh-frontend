@@ -10,3 +10,7 @@
 body {
   background-color: #f7f9fc !important;
 }
+
+.link:hover {
+  text-decoration: none;
+}

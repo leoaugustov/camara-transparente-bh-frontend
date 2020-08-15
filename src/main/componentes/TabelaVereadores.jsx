@@ -56,7 +56,8 @@ export default function TabelaVereadores({ vereadores, carregando }) {
             { carregando 
                 ? <AnimacaoCarregamento/> 
                 : <Tabela colunaChave="id" colunas={ colunas } dados={ vereadores } 
-                    mensagemColecaoVazia="Nenhum vereador encontrado..." classesCssElementoWrapper="altura-tabela-vereadores"/>
+                    mensagemColecaoVazia="Nenhum vereador encontrado..." 
+                    classesCssElementoWrapper="TabelaVereadores-altura-tabela-vereadores"/>
             }
         </Card.Body>
     </Card>

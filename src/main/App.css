@@ -1,18 +1,10 @@
-.barra-superior {
+.App-barra-superior {
     font-size: 1.5em;
     height: 65px;
     background-color: white;
 }
 
-.conteudo {
+.App-conteudo {
     margin-top: 70px;
     margin-bottom: 40px;
-}
-
-.autoria {
-    font-size: smaller;
-}
-
-.link:hover {
-    text-decoration: none;
 }

@@ -22,7 +22,7 @@ export default function CusteioPorPartido() {
         formatter: (celula, linha) => {
             return (
                 <div className="text-nowrap d-flex">
-                    <div className="bloco-cor-legenda mr-2" style={ { backgroundColor: linha.cor } }/>
+                    <div className="CusteioPorPartido-bloco-cor-legenda mr-2" style={ { backgroundColor: linha.cor } }/>
                     <span>{ linha.siglaPartido }</span>
                 </div>
             )
@@ -135,7 +135,7 @@ export default function CusteioPorPartido() {
                         colunas={ colunasTabela } 
                         dados={ partidos } 
                         mensagemColecaoVazia="Nenhum partido encontrado..." 
-                        classesCssElementoWrapper="altura-tabela-partidos"/>
+                        classesCssElementoWrapper="CusteioPorPartido-altura-tabela-partidos"/>
                 </Col>
                 </>
             }
