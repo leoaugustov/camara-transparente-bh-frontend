@@ -1,13 +1,14 @@
 import React from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 import Dashboard from './componentes/Dashboard'
 import PerfilVereador from './componentes/PerfilVereador'
 import PaginaNaoEncontrada from './componentes/PaginaNaoEncontrada'
 
   export default () => {
       return (
-          <Switch>
-              <Route exact path="/" component={ Dashboard }/>
+          <CacheSwitch>
+              <CacheRoute exact path="/" component={ Dashboard }/>
               <Route path="/perfil-vereador/:id" render={ props => {
                   if(props.location.state) {
                       return <PerfilVereador/>
@@ -16,6 +17,6 @@ import PaginaNaoEncontrada from './componentes/PaginaNaoEncontrada'
                   }
               } }/>
               <Route path="*" component={ PaginaNaoEncontrada }/>
-          </Switch>
+          </CacheSwitch>
       )
   }

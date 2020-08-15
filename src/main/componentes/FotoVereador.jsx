@@ -7,7 +7,7 @@ function definirDimensaoProporcional(dimensao, proporcao) {
     return Math.round(dimensao * multiplicador)
 }
 
-export default ({ linkFoto, proporcao }) => {
+export default ({ linkFoto, proporcao, classesCss }) => {
     return (
     <picture>
         <source srcSet={ linkFoto }/>
@@ -15,7 +15,7 @@ export default ({ linkFoto, proporcao }) => {
             alt="Foto do vereador" 
             width={ definirDimensaoProporcional(118, proporcao) } 
             height={ definirDimensaoProporcional(138, proporcao) } 
-            className="rounded"/>
+            className={ `rounded ${classesCss}` }/>
     </picture>
     )
 }
